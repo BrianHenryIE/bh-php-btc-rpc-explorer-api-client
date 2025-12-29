@@ -1,0 +1,80 @@
+{
+  "name": "brianhenryie/bh-php-btc-rpc-explorer-api-client",
+  "description": "API for btc-rpc-explorer",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "BrianHenryIE",
+      "email": "brian@BrianHenry.ie"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "process-timeout": 0,
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    },
+    "platform": {
+      "php": "8.4"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "BrianHenryIE\\BtcRpcExplorer\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BrianHenryIE\\BtcRpcExplorer\\Contract\\": "tests/contract",
+      "BrianHenryIE\\BtcRpcExplorer\\Unit\\": "tests/unit"
+    },
+    "classmap":[
+      "tests"
+    ]
+  },
+  "require": {
+    "ext-json": "*",
+    "php": ">=8.4",
+    "json-mapper/json-mapper": "*",
+    "psr/http-client-implementation": "*",
+    "psr/http-factory-implementation": "*"
+  },
+  "require-dev": {
+    "brainmaestro/composer-git-hooks": "*",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "guzzlehttp/guzzle": "*",
+    "mockery/mockery": "*",
+    "phpstan/extension-installer": "*",
+    "phpunit/phpcov": "*",
+    "psr-mock/http": "*",
+    "squizlabs/php_codesniffer": "*",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "scripts": {
+    "test": [
+      "phpunit"
+    ],
+    "test-coverage": [
+      "phpunit --coverage-text --coverage-clover tests/_reports/clover.xml --coverage-html tests/_reports/html"
+    ],
+    "cs-fix": [
+      "phpcbf || true",
+      "@cs"
+    ],
+    "cs": [
+      "phpcs || true",
+      "phpstan analyse --memory-limit 1G"
+    ]
+  },
+  "extra": {
+    "hooks": {
+      "pre-commit": [
+        "updated_files=$( git status | grep 'modified:\\s.*.php$' | cut -c14- | awk '{ printf(\"%s \", $0) }' ); vendor/bin/phpcs $(echo $updated_files) || true; vendor/bin/phpcbf $(echo $updated_files);"
+      ]
+    }
+  }
+}

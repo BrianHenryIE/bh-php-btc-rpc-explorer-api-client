@@ -1,0 +1,379 @@
+{
+  "miners": {
+    "SlushPool": {
+      "name": "SlushPool",
+      "details": {
+        "name": "SlushPool",
+        "link": "https://slushpool.com/",
+        "identifiedBy": "coinbase tag '/slush/'"
+      },
+      "blocks": [
+        185665,
+        185685,
+        185686,
+        185691,
+        185703,
+        185704,
+        185707,
+        185710,
+        185713,
+        185728,
+        185729,
+        185737,
+        185756,
+        185785,
+        185788,
+        185789,
+        185806,
+        185807
+      ],
+      "totalFees": "2.79538206",
+      "totalSubsidy": "900",
+      "totalTransactions": 3683,
+      "totalWeight": 7897604,
+      "subsidyCount": 18
+    },
+    "Unknown": {
+      "name": "Unknown",
+      "details": null,
+      "blocks": [
+        185666,
+        185667,
+        185668,
+        185670,
+        185671,
+        185672,
+        185674,
+        185679,
+        185680,
+        185681,
+        185682,
+        185683,
+        185687,
+        185689,
+        185693,
+        185694,
+        185695,
+        185696,
+        185697,
+        185699,
+        185700,
+        185708,
+        185712,
+        185715,
+        185716,
+        185718,
+        185721,
+        185723,
+        185726,
+        185727,
+        185730,
+        185731,
+        185733,
+        185734,
+        185736,
+        185738,
+        185741,
+        185742,
+        185744,
+        185745,
+        185746,
+        185748,
+        185749,
+        185750,
+        185751,
+        185752,
+        185755,
+        185757,
+        185759,
+        185760,
+        185765,
+        185766,
+        185775,
+        185778,
+        185779,
+        185780,
+        185786,
+        185794,
+        185799,
+        185802,
+        185808
+      ],
+      "totalFees": "3.60738447",
+      "totalSubsidy": "3050",
+      "totalTransactions": 6679,
+      "totalWeight": 10942520,
+      "subsidyCount": 61
+    },
+    "address-only:14Dj368DZyFPDbSbERf53wcGLWefsZUamn": {
+      "name": "address-only:14Dj368DZyFPDbSbERf53wcGLWefsZUamn",
+      "details": {
+        "name": "14Dj368DZyFPDbSbERf53wcGLWefsZUamn",
+        "type": "address-only",
+        "identifiedBy": "payout address 14Dj368DZyFPDbSbERf53wcGLWefsZUamn"
+      },
+      "blocks": [
+        185669,
+        185701,
+        185722,
+        185740,
+        185743,
+        185761,
+        185784,
+        185809
+      ],
+      "totalFees": "1.0901051",
+      "totalSubsidy": "400",
+      "totalTransactions": 1536,
+      "totalWeight": 3638636,
+      "subsidyCount": 8
+    },
+    "address-only:18b7hZvfGQ6B9chxezn2W1D5pyqGcW8pAn": {
+      "name": "address-only:18b7hZvfGQ6B9chxezn2W1D5pyqGcW8pAn",
+      "details": {
+        "name": "18b7hZvfGQ6B9chxezn2W1D5pyqGcW8pAn",
+        "type": "address-only",
+        "identifiedBy": "payout address 18b7hZvfGQ6B9chxezn2W1D5pyqGcW8pAn"
+      },
+      "blocks": [
+        185673,
+        185677,
+        185690,
+        185692,
+        185702,
+        185706,
+        185758,
+        185762,
+        185777,
+        185783,
+        185792,
+        185798,
+        185800
+      ],
+      "totalFees": "2.04524514",
+      "totalSubsidy": "650",
+      "totalTransactions": 3587,
+      "totalWeight": 6712732,
+      "subsidyCount": 13
+    },
+    "BTC Guild": {
+      "name": "BTC Guild",
+      "details": {
+        "name": "BTC Guild",
+        "link": "http://www.btcguild.com/",
+        "identifiedBy": "coinbase tag 'BTC Guild'"
+      },
+      "blocks": [
+        185675,
+        185676,
+        185684,
+        185705,
+        185719,
+        185720,
+        185725,
+        185732,
+        185763,
+        185764,
+        185767,
+        185770,
+        185771,
+        185781,
+        185787,
+        185793,
+        185796,
+        185797,
+        185801,
+        185803,
+        185805
+      ],
+      "totalFees": "0.75850797",
+      "totalSubsidy": "1050",
+      "totalTransactions": 1517,
+      "totalWeight": 3209772,
+      "subsidyCount": 21
+    },
+    "OzCoin": {
+      "name": "OzCoin",
+      "details": {
+        "name": "OzCoin",
+        "link": "http://ozcoin.net/",
+        "identifiedBy": "coinbase tag 'ozco.in'"
+      },
+      "blocks": [
+        185678,
+        185688,
+        185717,
+        185735,
+        185739,
+        185747,
+        185753,
+        185754,
+        185773,
+        185774,
+        185790,
+        185791
+      ],
+      "totalFees": "1.12066713",
+      "totalSubsidy": "600",
+      "totalTransactions": 2118,
+      "totalWeight": 4135544,
+      "subsidyCount": 12
+    },
+    "address-only:14jncAC9isL5LE76ceiXPXjr9N7iG4v7Xy": {
+      "name": "address-only:14jncAC9isL5LE76ceiXPXjr9N7iG4v7Xy",
+      "details": {
+        "name": "14jncAC9isL5LE76ceiXPXjr9N7iG4v7Xy",
+        "type": "address-only",
+        "identifiedBy": "payout address 14jncAC9isL5LE76ceiXPXjr9N7iG4v7Xy"
+      },
+      "blocks": [
+        185698,
+        185769,
+        185772
+      ],
+      "totalFees": "0.38524244",
+      "totalSubsidy": "150",
+      "totalTransactions": 685,
+      "totalWeight": 1330824,
+      "subsidyCount": 3
+    },
+    "Eligius": {
+      "name": "Eligius",
+      "details": {
+        "name": "Eligius",
+        "link": "http://eligius.st/",
+        "identifiedBy": "coinbase tag 'Eligius'"
+      },
+      "blocks": [
+        185709,
+        185768,
+        185782
+      ],
+      "totalFees": "0.5549",
+      "totalSubsidy": "150",
+      "totalTransactions": 80,
+      "totalWeight": 587436,
+      "subsidyCount": 3
+    },
+    "BitMinter": {
+      "name": "BitMinter",
+      "details": {
+        "name": "BitMinter",
+        "link": "http://bitminter.com/",
+        "identifiedBy": "payout address 19PkHafEN18mquJ9ChwZt5YEFoCdPP5vYB"
+      },
+      "blocks": [
+        185711
+      ],
+      "totalFees": "0.01050021",
+      "totalSubsidy": "50",
+      "totalTransactions": 84,
+      "totalWeight": 127256,
+      "subsidyCount": 1
+    },
+    "address-only:17a8dkMH71Abk1pTGGPDenjg2WCcow4Fvk": {
+      "name": "address-only:17a8dkMH71Abk1pTGGPDenjg2WCcow4Fvk",
+      "details": {
+        "name": "17a8dkMH71Abk1pTGGPDenjg2WCcow4Fvk",
+        "type": "address-only",
+        "identifiedBy": "payout address 17a8dkMH71Abk1pTGGPDenjg2WCcow4Fvk"
+      },
+      "blocks": [
+        185714
+      ],
+      "totalFees": "1.05538",
+      "totalSubsidy": "50",
+      "totalTransactions": 198,
+      "totalWeight": 767064,
+      "subsidyCount": 1
+    },
+    "TripleMining": {
+      "name": "TripleMining",
+      "details": {
+        "name": "TripleMining",
+        "link": "https://www.triplemining.com/",
+        "identifiedBy": "coinbase tag 'Triplemining.com'"
+      },
+      "blocks": [
+        185724
+      ],
+      "totalFees": "0.14309609",
+      "totalSubsidy": "50",
+      "totalTransactions": 177,
+      "totalWeight": 298940,
+      "subsidyCount": 1
+    },
+    "address-only:1P788DVF7Yt7fJjiFtvucKZDy245a7RdAW": {
+      "name": "address-only:1P788DVF7Yt7fJjiFtvucKZDy245a7RdAW",
+      "details": {
+        "name": "1P788DVF7Yt7fJjiFtvucKZDy245a7RdAW",
+        "type": "address-only",
+        "identifiedBy": "payout address 1P788DVF7Yt7fJjiFtvucKZDy245a7RdAW"
+      },
+      "blocks": [
+        185776
+      ],
+      "totalFees": "0.1196",
+      "totalSubsidy": "50",
+      "totalTransactions": 254,
+      "totalWeight": 398984,
+      "subsidyCount": 1
+    },
+    "address-only:14MyvXqxuYzCnKZbWdzbCimey9feCGVwkG": {
+      "name": "address-only:14MyvXqxuYzCnKZbWdzbCimey9feCGVwkG",
+      "details": {
+        "name": "14MyvXqxuYzCnKZbWdzbCimey9feCGVwkG",
+        "type": "address-only",
+        "identifiedBy": "payout address 14MyvXqxuYzCnKZbWdzbCimey9feCGVwkG"
+      },
+      "blocks": [
+        185795
+      ],
+      "totalFees": "0.357525",
+      "totalSubsidy": "50",
+      "totalTransactions": 645,
+      "totalWeight": 996752,
+      "subsidyCount": 1
+    },
+    "address-only:1EoAmuLBeLC2YpRAFwRnzM6PrbaGUNFgW8": {
+      "name": "address-only:1EoAmuLBeLC2YpRAFwRnzM6PrbaGUNFgW8",
+      "details": {
+        "name": "1EoAmuLBeLC2YpRAFwRnzM6PrbaGUNFgW8",
+        "type": "address-only",
+        "identifiedBy": "payout address 1EoAmuLBeLC2YpRAFwRnzM6PrbaGUNFgW8"
+      },
+      "blocks": [
+        185804
+      ],
+      "totalFees": "0.09559754",
+      "totalSubsidy": "50",
+      "totalTransactions": 221,
+      "totalWeight": 500316,
+      "subsidyCount": 1
+    }
+  },
+  "minerNamesSortedByBlockCount": [
+    "Unknown",
+    "BTC Guild",
+    "SlushPool",
+    "address-only:18b7hZvfGQ6B9chxezn2W1D5pyqGcW8pAn",
+    "OzCoin",
+    "address-only:14Dj368DZyFPDbSbERf53wcGLWefsZUamn",
+    "address-only:14jncAC9isL5LE76ceiXPXjr9N7iG4v7Xy",
+    "Eligius",
+    "BitMinter",
+    "address-only:17a8dkMH71Abk1pTGGPDenjg2WCcow4Fvk",
+    "TripleMining",
+    "address-only:1P788DVF7Yt7fJjiFtvucKZDy245a7RdAW",
+    "address-only:14MyvXqxuYzCnKZbWdzbCimey9feCGVwkG",
+    "address-only:1EoAmuLBeLC2YpRAFwRnzM6PrbaGUNFgW8"
+  ],
+  "overall": {
+    "blockCount": 145,
+    "totalFees": "14.13913315",
+    "totalSubsidy": "7250",
+    "totalTransactions": 21464,
+    "totalWeight": 41544380,
+    "subsidyCount": 145
+  }
+}

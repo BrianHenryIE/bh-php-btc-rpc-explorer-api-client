@@ -1,0 +1,8 @@
+/.env
+/.env.secret
+.idea
+vendor
+scratch
+.phpunit.result.cache
+.DS_Store
+tests/_reports

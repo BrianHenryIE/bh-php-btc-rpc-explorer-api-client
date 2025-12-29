@@ -1,0 +1,12 @@
+{
+  "height": 184602,
+  "bestblock": "0000000000000716ccee0ecadafa54ddaad6537493533d5b634ecda816d30b80",
+  "txouts": 1678552,
+  "bogosize": 127662803,
+  "hash_serialized_3": "b5643b1767ee06abe1a2cdf620e6c70d600a33df2cba84bb8a9a6512741e3d6a",
+  "total_amount": 9229990.25991876,
+  "transactions": 739963,
+  "disk_size": 84461908,
+  "usingCoinStatsIndex": false,
+  "lastUpdated": 1766991397735
+}

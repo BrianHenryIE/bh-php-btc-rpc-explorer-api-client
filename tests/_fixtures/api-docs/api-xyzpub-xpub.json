@@ -1,0 +1,64 @@
+{
+  "keyType": "xpub",
+  "relatedKeys": [
+    {
+      "keyType": "ypub",
+      "key": "ypub6ZjkLiEwNDVeZ6VaFpaULvtV3sGT6n43CvrktC2G6H87ME8PTxCe59inL5QUWnRM4f5LVhkvxPsoR5C33Hqu4Bb3FY35oYPRp6d7CCfcqmo",
+      "outputType": "P2WPKH in P2SH",
+      "firstAddress": "3JDVonJcuQ7yQQQJh1tFLV74uRZUP6LgvF"
+    },
+    {
+      "keyType": "zpub",
+      "key": "zpub6ta1eNurWu38QPgh6BN6Z1yzDqQu3Q3Y83Nyfav9UHVzQKwcicNChDNvMHN4Wh5GUJC9FBMVR4EMJMobkzFurRGe7sjWPTCv5pgkaqEA6or",
+      "outputType": "P2WPKH",
+      "firstAddress": "bc1qdx0pd4h65d7mekkhk7n6jwzfwgqath7s0e368g"
+    }
+  ],
+  "outputType": "P2PKH",
+  "outputTypeDesc": "Pay to Public Key Hash",
+  "bip32Path": "m/44'/0'",
+  "receiveAddresses": [
+    "1AdTLNfqiQtQ7yRNoZDEFTE9kSri2jrRVD",
+    "1FrZFhRozuxEmtboibXeXpuyFa7miMThCa",
+    "1DRGkmRtqPt3NgEr4rQMTtDY2jTMfyLUKc",
+    "1BtUM8uVSqjA5NNW7U9nx35xs2qnvGtnPT",
+    "14WPCpXgecdq1Zme3ArErWN7y8VERo3YZJ",
+    "1AhPbjHP5DiJdTAZ8iqn6xTh3VLtXj2EB1",
+    "1MazSza2fD1z2FH3g8iCnJhoHZKp7Ghe55",
+    "1KgVrr7CuTL5AziBmgTH5GjGswVpVa5dsB",
+    "178VmV9tNJUbVHD77vLxRuMQMz18DjuZ2f",
+    "1YwFsiqLbJEdpey3zVjD9E4kxSuLW7ikW",
+    "1MHamtEVTyM1sKyx4g5zUZbSKhmSyibDCm",
+    "18FYcamti971y5ZoFAKbNqMzY3xcTbQBB2",
+    "199zuGae5f1R68X9efUg2ZP9L422uLqhk3",
+    "13k8yWs72FkWC3J1HD79K7ugrWMyadeXiN",
+    "1FxRiKxJyoKqXshq23nnNBCCrq9tNTRarx",
+    "1FfYmxwp6FmeZttr6XkHqgvKrMaB9FZH3W",
+    "1LZbBrzircN19i16jyb6FoDM2d7vZN8XLD",
+    "1Fa11nZoNWGbrs6suagBoqWNX1FVAsCeBW",
+    "1H5NiSEbShaXA6PBsfJq8z8vC5tu3qPEHi",
+    "1HxEJiMf8SCHnkyEXHK1tSQa5Gny1uiJh2"
+  ],
+  "changeAddresses": [
+    "13AGMJSeF7HXzyKWtingr4ZSz14REnuRXh",
+    "1Jcv9eTVPSeoceuTy9DTPenioDJtcSGawu",
+    "1Fw9wqUB3EtzPVZontRd33NnD5JyHnodRA",
+    "12zUSVvMkKPJiNRNPPt8y3eH3f2JXGFQWY",
+    "19Qgvmux9YGCxM34NnsTYx4wrnfcW6txRk",
+    "1Gr9TbyHjkdEFME8mfqn9BVoqLCipZVDTg",
+    "19xCzQy6VPevbQuLbthj39EtqQ4SAsavvN",
+    "1CJBLfB79RpyuKegpvNd1Bf8euuXpDpWue",
+    "17TSUtyduAFeh5SYT5YXCs8fyMBSaEmGJ4",
+    "1BpWNUNQNLB1HtWM5u9Ey4NWD8uXTh99dJ",
+    "1fHH1FmqAkaiRic5ooZFoQrzTfJPPBT9K",
+    "1FHgxhr8N8JjUQ1gDZ5zwrB7CJFTnWbaC1",
+    "1FzE4GXAKnWsiU2rNMkBpaoVjzBtwdgKsY",
+    "1A48qs3ZdpUAbhagxYVhbfAqdBkruy7B9J",
+    "1A98YYZgfxMPwDfgASgfK4Vfeivg5xdGFz",
+    "1MDJBddHExMiKruevvsMScjLRjTa15Uvem",
+    "1PPtPWvMND1gPoZfHZ1j5ZJzu1koANJpRi",
+    "19SpWyRPNw22HhSSZBubXRmR48nrCy2RuR",
+    "1JwTDws6BuDBqBhW1SvXrkqitMFRGuTKG3",
+    "1F8xCj7tpy6uMdTwFXvqesqXWEy1H5NtSJ"
+  ]
+}

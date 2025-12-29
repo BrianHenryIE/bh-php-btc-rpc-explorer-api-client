@@ -1,0 +1,57 @@
+{
+  "1Day": {
+    "val": 11.894,
+    "unit": "terahash",
+    "unitAbbreviation": "TH",
+    "unitExponent": "12",
+    "unitMultiplier": 1000000000000,
+    "raw": 11894000000000,
+    "string1": "11.894x10^12",
+    "string2": "11.894e12",
+    "string3": "11,894,000,000,000"
+  },
+  "7Day": {
+    "val": 12.218,
+    "unit": "terahash",
+    "unitAbbreviation": "TH",
+    "unitExponent": "12",
+    "unitMultiplier": 1000000000000,
+    "raw": 12218000000000,
+    "string1": "12.218x10^12",
+    "string2": "12.218e12",
+    "string3": "12,218,000,000,000"
+  },
+  "30Day": {
+    "val": 11.804,
+    "unit": "terahash",
+    "unitAbbreviation": "TH",
+    "unitExponent": "12",
+    "unitMultiplier": 1000000000000,
+    "raw": 11804000000000,
+    "string1": "11.804x10^12",
+    "string2": "11.804e12",
+    "string3": "11,804,000,000,000"
+  },
+  "90day": {
+    "val": 11.539,
+    "unit": "terahash",
+    "unitAbbreviation": "TH",
+    "unitExponent": "12",
+    "unitMultiplier": 1000000000000,
+    "raw": 11539000000000,
+    "string1": "11.539x10^12",
+    "string2": "11.539e12",
+    "string3": "11,539,000,000,000"
+  },
+  "365Day": {
+    "val": 10.728,
+    "unit": "terahash",
+    "unitAbbreviation": "TH",
+    "unitExponent": "12",
+    "unitMultiplier": 1000000000000,
+    "raw": 10728000000000,
+    "string1": "10.728x10^12",
+    "string2": "10.728e12",
+    "string3": "10,728,000,000,000"
+  }
+}
