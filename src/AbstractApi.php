@@ -65,7 +65,7 @@ abstract class AbstractApi
         // Handle primitive types
         if (in_array($type, ['string', 'int', 'float', 'array'])) {
             if ($type === 'string') {
-                return $responseBody;
+                return trim($responseBody);
             }
             if ($type === 'int') {
                 return (int) $responseBody;
