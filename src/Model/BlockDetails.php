@@ -16,7 +16,7 @@ readonly class BlockDetails
     public function __construct(
         public string $hash,
         public int $confirmations,
-        public int $Height,
+        public int $height,
         public int $version,
         public string $versionHex,
         public string $merkleroot,
@@ -33,7 +33,10 @@ readonly class BlockDetails
         public int $size,
         public int $weight,
         public array $tx,
-        public CoinbaseTx $coinbaseTx,
+        public ?CoinbaseTx $coinbaseTx,
+        public ?string $totalFees,
+        public ?string $miner, // TODO: This is null in fixture, check true shape.
+        public ?string $subsidy,
     ) {
     }
 }

@@ -6,7 +6,6 @@ namespace BrianHenryIE\BtcRpcExplorer\Model;
  * Response model for extended public key endpoints.
  *
  * @see \BrianHenryIE\BtcRpcExplorer\BtcRpcExplorerAPI::extendedPublicKeyDetails()
- * @see \BrianHenryIE\BtcRpcExplorer\BtcRpcExplorerAPI::extendedPublicKeyDetailsPage()
  */
 readonly class ExtendedPublicKeyDetails
 {

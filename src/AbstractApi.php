@@ -2,6 +2,7 @@
 
 namespace BrianHenryIE\BtcRpcExplorer;
 
+use BrianHenryIE\BtcRpcExplorer\Exceptions\BtcRpcExplorerException;
 use JsonMapper\Exception\BuilderException as JsonMapperBuilderException;
 use JsonMapper\JsonMapperBuilder;
 use JsonMapper\Handler\FactoryRegistry;
@@ -81,6 +82,19 @@ abstract class AbstractApi
             throw new UnexpectedValueException("{$type} class does not exist");
         }
 
+        $decoded = json_decode($responseBody, true);
+
+        // Check is the response an error
+        if (
+            json_last_error() === JSON_ERROR_NONE
+            && is_array($decoded)
+            && isset($decoded['success'])
+            && $decoded['success'] === false
+            && isset($decoded['error'])
+        ) {
+            throw new BtcRpcExplorerException($decoded['error']);
+        }
+
         $factoryRegistry = new FactoryRegistry();
         $mapper = JsonMapperBuilder::new()
                                     ->withAttributesMiddleware()
@@ -93,7 +107,6 @@ abstract class AbstractApi
         $mapper->push(new CaseConversion(TextNotation::UNDERSCORE(), TextNotation::CAMEL_CASE()));
 
         // Check if the response is an array
-        $decoded = json_decode($responseBody, true);
         if (json_last_error() === JSON_ERROR_NONE && is_array($decoded) && isset($decoded[0])) {
             return $mapper->mapToClassArrayFromString($responseBody, $type);
         }

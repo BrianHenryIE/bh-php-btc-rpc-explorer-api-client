@@ -7,7 +7,7 @@ use JsonMapper\Middleware\Attributes\MapFrom;
 /**
  * Response model for mempool fees endpoint.
  *
- * @see \BrianHenryIE\BtcRpcExplorer\BtcRpcExplorerAPI::fees()
+ * @see \BrianHenryIE\BtcRpcExplorer\BtcRpcExplorerAPI::mempoolFees()
  */
 readonly class Fees
 {

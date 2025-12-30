@@ -19,7 +19,7 @@ readonly class TXSummary
         public int $version,
         public int $size,
         public int $vsize,
-        public int $Weight,
+        public int $weight,
         public int $locktime,
         public array $vin,
         public array $vout,

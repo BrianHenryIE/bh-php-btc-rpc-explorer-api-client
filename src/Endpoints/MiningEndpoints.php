@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * Mining endpoints
+ *
+ * /api/mining/hashrate – Returns the network hash rate, estimated over the last 1, 7, 30, 90, and 365 days.
+ * /api/mining/diff-adj-estimate – Returns the current estimate for the next difficulty adjustment as a percentage.
+ * /api/mining/next-block – Returns a summary for the estimated next block to be mined (produced via getblocktemplate).
+ * /api/mining/next-block/txids – Returns a list of the transaction IDs included in the estimated next block to be mined (produced via getblocktemplate).
+ * /api/mining/next-block/includes/$TXID – Returns whether the specified transaction ID is included in the estimated next block to be mined (produced via getblocktemplate).
+ * /api/mining/miner-summary – Returns whether the specified transaction ID is included in the estimated next block to be mined (produced via getblocktemplate).
+ *
+ * @package brianhenryie/bh-php-btc-rpc-explorer-api-client
+ */
+
 namespace BrianHenryIE\BtcRpcExplorer\Endpoints;
 
 use BrianHenryIE\BtcRpcExplorer\Model\MinerSummary;
@@ -8,8 +21,6 @@ use BrianHenryIE\BtcRpcExplorer\Model\NextBlockDetails;
 
 trait MiningEndpoints
 {
-    // Mining endpoints
-
     /**
      * Get hashrate details for various time periods.
      */
@@ -60,7 +71,6 @@ trait MiningEndpoints
      * Get miner summary since the specified period (e.g., "1d", "7d").
      *
      * @param string $since Time period (e.g., "1d", "7d", "30d")
-     * @return MinerSummary
      */
     public function minerSummary(string $since): MinerSummary
     {

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * TODO: NB, both "90day" and "30Day" seem valid, i.e. capitalisation. Consider CaseConversion.
+ */
+
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
 use JsonMapper\Middleware\Attributes\MapFrom;
@@ -18,7 +22,7 @@ readonly class MiningHashrate
         public HashrateSummary $sevenDay,
         #[MapFrom('30Day')]
         public HashrateSummary $thirtyDay,
-        #[MapFrom('90Day')]
+        #[MapFrom('90day')]
         public HashrateSummary $ninetyDay,
         #[MapFrom('365Day')]
         public HashrateSummary $oneYear,

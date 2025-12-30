@@ -1,0 +1,16 @@
+<?php
+
+namespace BrianHenryIE\BtcRpcExplorer\Exceptions;
+
+use Exception;
+
+/**
+ * {
+ *   "success": false,
+ *   "error": "You have exchange-rate requests disabled (this is the default state; in your server configuration, you must set BTCEXP_NO_RATES to 'false', and ensure that BTCEXP_PRIVACY_MODE is also still its default value of 'false')"
+ * }
+ */
+
+class BtcRpcExplorerException extends Exception
+{
+}

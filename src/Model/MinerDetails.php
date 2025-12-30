@@ -14,7 +14,7 @@ readonly class MinerDetails
      */
     public function __construct(
         public string $name,
-        public MinerInfo $details,
+        public ?MinerInfo $details,
         public array $blocks,
         public string $totalFees,
         public string $totalSubsidy,

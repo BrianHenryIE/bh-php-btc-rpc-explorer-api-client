@@ -1,13 +1,21 @@
 <?php
 
+/**
+ * Price endpoints
+ *
+ * /api/price – Returns the price of 1 BTC, in USD, EUR, GBP, and XAU
+ * /api/price/marketcap – Returns the market cap of Bitcoin, in USD, EUR, GBP, XAU
+ * /api/price/sats – Returns the price of 1 unit of [USD, EUR, GBP, XAU] (e.g. 1 "usd") in satoshis (aka "Moscow Time")
+ *
+ * @package brianhenryie/bh-php-btc-rpc-explorer-api-client
+ */
+
 namespace BrianHenryIE\BtcRpcExplorer\Endpoints;
 
 use BrianHenryIE\BtcRpcExplorer\Model\Price;
 
 trait PriceEndpoints
 {
-    // Price endpoints
-
     /**
      * Get the price of 1 BTC in USD, EUR, GBP, and XAU.
      */

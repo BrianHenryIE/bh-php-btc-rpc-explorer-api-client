@@ -14,7 +14,7 @@ readonly class CoinbaseTx
      * @param VOut[] $vout
      */
     public function __construct(
-        public bool $in_active_chain,
+        public bool $inActiveChain,
         public string $txid,
         public string $hash,
         public int $version,
@@ -29,9 +29,6 @@ readonly class CoinbaseTx
         public int $confirmations,
         public int $time,
         public int $blocktime,
-        public string $totalFees,
-        public Miner $miner,
-        public string $subsidy,
     ) {
     }
 }
