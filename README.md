@@ -8,7 +8,16 @@ A thin PHP API wrapper to provide strongly typed responses and convenience metho
 
 This is a simple API client using `psr/http-client-implementation` and `psr/http-factory-implementation`, then [json-mapper/json-mapper](https://github.com/JsonMapper/JsonMapper) ([jsonmapper.net](https://jsonmapper.net/)) to parse responses to strongly typed objects, using `strings` for floats/decimals.
 
-Once published:
+This is not yet published on Packagist, so first:
+
+```bash
+composer config minimum-stability dev
+composer config prefer-stable true
+
+composer config repositories.brianhenryie/bh-php-btc-rpc-explorer-api-client git https://github.com/BrianHenryIE/bh-php-btc-rpc-explorer-api-client
+```
+
+Once published (should use specific commit to avoid updating a dev package):
 
 ```
 composer require brianhenryie/bh-php-btc-rpc-explorer-api-client
