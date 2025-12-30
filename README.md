@@ -16,9 +16,9 @@ composer require brianhenryie/bh-php-btc-rpc-explorer-api-client
 
 ## Work in Progress
 
-* Fix JsonMapper mis-parsing associative array to stdclass
-* Fix casing in property names, e.g. `txids` -> `txIds` or even `transactionIds`.
-* Get PHPStan templates/generics working
+* ~~Fix JsonMapper mis-parsing associative array to stdclass~~
+* ~~Fix casing in property names, e.g. `txids` -> `txIds` or even `transactionIds`.~~
+* ~~Get PHPStan templates/generics working~~
 * Generate Contract tests
 * ~~Document abbreviations and jargon~~
 * test failures/exceptions
