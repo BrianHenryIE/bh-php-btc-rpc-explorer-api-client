@@ -19,8 +19,6 @@ use BrianHenryIE\BtcRpcExplorer\Model\Tip;
 
 trait BlocksEndpoints
 {
-    // Block endpoints
-
     /**
      * Get block details by hash.
      *
