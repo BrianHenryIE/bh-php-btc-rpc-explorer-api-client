@@ -4,6 +4,10 @@
 
 A thin PHP API wrapper to provide strongly typed responses and convenience methods for [janoside/btc-rpc-explorer](https://github.com/janoside/btc-rpc-explorer), a _"Database-free, self-hosted Bitcoin explorer, via RPC to Bitcoin Core"_.
 
+## Status
+
+Waiting for my local `bitcoind` instance to sync so I can ask Claude to write contract tests to show how this works. It's ~600GB sync and my home internet has given me a warning this month for going over my allowance.
+
 ## Introduction
 
 This is a simple API client using `psr/http-client-implementation` and `psr/http-factory-implementation`, then [json-mapper/json-mapper](https://github.com/JsonMapper/JsonMapper) ([jsonmapper.net](https://jsonmapper.net/)) to parse responses to strongly typed objects, using `strings` for floats/decimals.
