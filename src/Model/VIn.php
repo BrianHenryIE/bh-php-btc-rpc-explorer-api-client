@@ -2,6 +2,8 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use JsonMapper\Middleware\Attributes\MapFrom;
+
 /**
  * Transaction input - part of CoinbaseTx and TXSummary.
  *
@@ -17,7 +19,8 @@ readonly class VIn
         public ?string $coinbase = null,
         public array $txinwitness = [],
         public int $sequence = 0,
-        public ?string $txid = null,
+        #[MapFrom('txid')]
+        public ?string $txId = null,
         public ?int $vout = null,
         public ?ScriptSig $scriptSig = null,
     ) {

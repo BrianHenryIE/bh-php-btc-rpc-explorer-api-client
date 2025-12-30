@@ -2,13 +2,16 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use JsonMapper\Middleware\Attributes\MapFrom;
+
 readonly class ExtendedPublicKeyTransactions
 {
     /**
-     * @param string[] $txids
+     * @param string[] $txIds
      */
     public function __construct(
-        public array $txids,
+        #[MapFrom('txids')]
+        public array $txIds,
         public int $txCount,
     ) {
     }

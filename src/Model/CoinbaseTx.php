@@ -2,6 +2,8 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use JsonMapper\Middleware\Attributes\MapFrom;
+
 /**
  * Part of BlockDetails response.
  *
@@ -15,7 +17,8 @@ readonly class CoinbaseTx
      */
     public function __construct(
         public bool $inActiveChain,
-        public string $txid,
+        #[MapFrom('txid')]
+        public string $txId,
         public string $hash,
         public int $version,
         public int $size,

@@ -4,6 +4,7 @@ namespace BrianHenryIE\BtcRpcExplorer\Model;
 
 use DateTimeImmutable;
 use DateTimeInterface;
+use JsonMapper\Middleware\Attributes\MapFrom;
 
 /**
  * Response model for transaction endpoint.
@@ -17,7 +18,8 @@ readonly class TXSummary
      * @param VOut[] $vout
      */
     public function __construct(
-        public string $txid,
+        #[MapFrom('txid')]
+        public string $txId,
         public string $hash,
         public int $version,
         public int $size,

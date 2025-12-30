@@ -100,7 +100,7 @@ class BlocksEndpointsTest extends MockHttpTestCase
 
         // Coinbase transaction
         $this->assertTrue($result->coinbaseTx->inActiveChain);
-        $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->coinbaseTx->txid);
+        $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->coinbaseTx->txId);
         $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->coinbaseTx->hash);
         $this->assertEquals(1, $result->coinbaseTx->version);
         $this->assertEquals(134, $result->coinbaseTx->size);

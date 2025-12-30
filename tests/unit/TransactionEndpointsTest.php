@@ -22,7 +22,7 @@ class TransactionEndpointsTest extends MockHttpTestCase
         $result = $sut->tx('f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16');
 
         // Basic transaction properties
-        $this->assertEquals('f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16', $result->txid);
+        $this->assertEquals('f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16', $result->txId);
         $this->assertEquals('f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16', $result->hash);
         $this->assertEquals(1, $result->version);
         $this->assertEquals(275, $result->size);
@@ -38,7 +38,7 @@ class TransactionEndpointsTest extends MockHttpTestCase
         // Test vin array
         $this->assertIsArray($result->vin);
         $this->assertCount(1, $result->vin);
-        $this->assertEquals('0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9', $result->vin[0]->txid);
+        $this->assertEquals('0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9', $result->vin[0]->txId);
         $this->assertEquals(0, $result->vin[0]->vout);
         $this->assertEquals(4294967295, $result->vin[0]->sequence);
 

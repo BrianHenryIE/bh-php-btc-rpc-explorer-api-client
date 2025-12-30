@@ -2,6 +2,8 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use JsonMapper\Middleware\Attributes\MapFrom;
+
 /**
  * Part of AddressSummary response.
  *
@@ -10,13 +12,15 @@ namespace BrianHenryIE\BtcRpcExplorer\Model;
 readonly class TXHistory
 {
     /**
-     * @param string[] $txids
-     * @param array<string, int> $blockHeightsByTxid
+     * @param string[] $txIds
+     * @param array<string, int> $blockHeightsByTxId
      */
     public function __construct(
         public int $txCount,
-        public array $txids,
-        public array $blockHeightsByTxid,
+        #[MapFrom('txids')]
+        public array $txIds,
+        #[MapFrom('blockHeightsByTxid')]
+        public array $blockHeightsByTxId,
         public int $balanceSat,
         public TXHistoryRequest $request,
     ) {
