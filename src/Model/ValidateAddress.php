@@ -2,6 +2,8 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use JsonMapper\Middleware\Attributes\MapFrom;
+
 /**
  * Address Validation - Bitcoin Core's validation result for an address.
  *
@@ -13,18 +15,21 @@ namespace BrianHenryIE\BtcRpcExplorer\Model;
 readonly class ValidateAddress
 {
     /**
-     * @param bool $isvalid Is valid - whether this is a valid Bitcoin address that can receive payments.
+     * @param bool $isValid Is valid - whether this is a valid Bitcoin address that can receive payments.
      * @param string $address Bitcoin address - the address string that was validated.
      * @param string $scriptPubKey Script public key - the locking script in hexadecimal that corresponds to this address.
-     * @param bool $isscript Is script address - whether this is a P2SH (Pay-to-Script-Hash) address starting with '3'.
-     * @param bool $iswitness Is witness address - whether this is a SegWit address (native bech32 starting with 'bc1' or wrapped P2SH-P2WPKH).
+     * @param bool $isScript Is script address - whether this is a P2SH (Pay-to-Script-Hash) address starting with '3'.
+     * @param bool $isWitness Is witness address - whether this is a SegWit address (native bech32 starting with 'bc1' or wrapped P2SH-P2WPKH).
      */
     public function __construct(
-        public bool $isvalid,
+        #[MapFrom('isvalid')]
+        public bool $isValid,
         public string $address,
         public string $scriptPubKey,
-        public bool $isscript,
-        public bool $iswitness,
+        #[MapFrom('isscript')]
+        public bool $isScript,
+        #[MapFrom('iswitness')]
+        public bool $isWitness,
     ) {
     }
 }

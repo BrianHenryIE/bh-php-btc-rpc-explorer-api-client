@@ -30,11 +30,11 @@ class AddressesEndpointsTest extends MockHttpTestCase
         $this->assertEquals('base58', $result->encoding);
 
         // validateaddress
-        $this->assertTrue($result->validateAddress->isvalid);
+        $this->assertTrue($result->validateAddress->isValid);
         $this->assertEquals('34rng4QwB5pHUbGDJw1JxjLwgEU8TQuEqv', $result->validateAddress->address);
         $this->assertEquals('a91422c17a06117b40516f9826804800003562e834c987', $result->validateAddress->scriptPubKey);
-        $this->assertTrue($result->validateAddress->isscript);
-        $this->assertFalse($result->validateAddress->iswitness);
+        $this->assertTrue($result->validateAddress->isScript);
+        $this->assertFalse($result->validateAddress->isWitness);
 
         // electrumScriptHash
         $this->assertEquals('124dbe6cf2394aa0e566d9b1df021343b563c694283038940e42ac9b24a50fcc', $result->electrumScriptHash);
