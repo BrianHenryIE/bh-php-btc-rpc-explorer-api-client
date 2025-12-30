@@ -3,6 +3,7 @@
 namespace BrianHenryIE\BtcRpcExplorer;
 
 use BrianHenryIE\BtcRpcExplorer\Exceptions\BtcRpcExplorerException;
+use BrianHenryIE\BtcRpcExplorer\JsonMapper\AssociativeArrayMiddleware;
 use JsonMapper\Exception\BuilderException as JsonMapperBuilderException;
 use JsonMapper\JsonMapperBuilder;
 use JsonMapper\Handler\FactoryRegistry;
@@ -111,14 +112,16 @@ abstract class AbstractApi
 
         $factoryRegistry = new FactoryRegistry();
         $mapper = JsonMapperBuilder::new()
-                                    ->withAttributesMiddleware()
-                                    ->withObjectConstructorMiddleware($factoryRegistry)
                                     ->withPropertyMapper(new PropertyMapper($factoryRegistry))
+                                    ->withAttributesMiddleware()
+                                    ->withDocBlockAnnotationsMiddleware()
                                     ->withTypedPropertiesMiddleware()
                                     ->withNamespaceResolverMiddleware()
+                                    ->withObjectConstructorMiddleware($factoryRegistry)
                                     ->build();
 
         $mapper->push(new CaseConversion(TextNotation::UNDERSCORE(), TextNotation::CAMEL_CASE()));
+        $mapper->push(new AssociativeArrayMiddleware());
 
         // Check if the response is an array
         if (json_last_error() === JSON_ERROR_NONE && is_array($decoded) && isset($decoded[0])) {

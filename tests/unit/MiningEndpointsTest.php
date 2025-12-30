@@ -154,8 +154,6 @@ class MiningEndpointsTest extends MockHttpTestCase
 
         $sut = $this->getMockClientWithFixture("/api/mining/miner-summary?since={$since}", $fixture);
 
-        $this->markTestIncomplete('How to get map as associative array, not stdclass?');
-
         $result = $sut->minerSummary($since);
 
         // Test overall stats
