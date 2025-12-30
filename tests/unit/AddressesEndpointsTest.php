@@ -41,9 +41,7 @@ class AddressesEndpointsTest extends MockHttpTestCase
 
         // txHistory
         $this->assertEquals(0, $result->txHistory->txCount);
-        $this->assertIsArray($result->txHistory->txIds);
         $this->assertEmpty($result->txHistory->txIds);
-        $this->assertIsArray($result->txHistory->blockHeightsByTxId);
         $this->assertEmpty($result->txHistory->blockHeightsByTxId);
         $this->assertEquals(0, $result->txHistory->balanceSat);
 

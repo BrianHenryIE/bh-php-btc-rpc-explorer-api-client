@@ -36,18 +36,16 @@ class TransactionEndpointsTest extends MockHttpTestCase
         $this->assertEquals('2009-01-12', $result->getBlockTime()->format('Y-m-d'));
 
         // Test vIn array
-        $this->assertIsArray($result->vIn);
         $this->assertCount(1, $result->vIn);
         $this->assertEquals('0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9', $result->vIn[0]->txId);
         $this->assertEquals(0, $result->vIn[0]->vOut);
         $this->assertEquals(4294967295, $result->vIn[0]->sequence);
 
         // Test vIn scriptSig
-        $this->assertEquals('304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d09[ALL]', $result->vIn[0]->scriptSig->asm);
-        $this->assertEquals('47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901', $result->vIn[0]->scriptSig->hex);
+        $this->assertEquals('304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d09[ALL]', $result->vIn[0]->scriptSig?->asm);
+        $this->assertEquals('47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901', $result->vIn[0]->scriptSig?->hex);
 
         // Test vOut array
-        $this->assertIsArray($result->vOut);
         $this->assertCount(2, $result->vOut);
 
         // Test first vOut

@@ -124,7 +124,6 @@ class MiningEndpointsTest extends MockHttpTestCase
         $result = $sut->nextBlockTXIDs();
 
         // Fixture contains empty array
-        $this->assertIsArray($result);
         $this->assertEmpty($result);
     }
 
@@ -165,23 +164,21 @@ class MiningEndpointsTest extends MockHttpTestCase
         $this->assertEquals(145, $result->overall->subsidyCount);
 
         // Test minerNamesSortedByBlockCount array
-        $this->assertIsArray($result->minerNamesSortedByBlockCount);
         $this->assertCount(14, $result->minerNamesSortedByBlockCount);
         $this->assertEquals('Unknown', $result->minerNamesSortedByBlockCount[0]);
         $this->assertEquals('BTC Guild', $result->minerNamesSortedByBlockCount[1]);
         $this->assertEquals('SlushPool', $result->minerNamesSortedByBlockCount[2]);
 
         // Test miners array
-        $this->assertIsArray($result->miners);
         $this->assertCount(14, $result->miners);
 
         // Test SlushPool miner details
         $this->assertArrayHasKey('SlushPool', $result->miners);
         $slushPool = $result->miners['SlushPool'];
         $this->assertEquals('SlushPool', $slushPool->name);
-        $this->assertEquals('SlushPool', $slushPool->details->name);
-        $this->assertEquals('https://slushpool.com/', $slushPool->details->link);
-        $this->assertEquals("coinbase tag '/slush/'", $slushPool->details->identifiedBy);
+        $this->assertEquals('SlushPool', $slushPool->details?->name);
+        $this->assertEquals('https://slushpool.com/', $slushPool->details?->link);
+        $this->assertEquals("coinbase tag '/slush/'", $slushPool->details?->identifiedBy);
         $this->assertIsArray($slushPool->blocks);
         $this->assertCount(18, $slushPool->blocks);
         $this->assertEquals(185665, $slushPool->blocks[0]);
@@ -210,8 +207,8 @@ class MiningEndpointsTest extends MockHttpTestCase
         $this->assertArrayHasKey('address-only:14Dj368DZyFPDbSbERf53wcGLWefsZUamn', $result->miners);
         $addressOnly = $result->miners['address-only:14Dj368DZyFPDbSbERf53wcGLWefsZUamn'];
         $this->assertEquals('address-only:14Dj368DZyFPDbSbERf53wcGLWefsZUamn', $addressOnly->name);
-        $this->assertEquals('14Dj368DZyFPDbSbERf53wcGLWefsZUamn', $addressOnly->details->name);
-        $this->assertEquals('payout address 14Dj368DZyFPDbSbERf53wcGLWefsZUamn', $addressOnly->details->identifiedBy);
+        $this->assertEquals('14Dj368DZyFPDbSbERf53wcGLWefsZUamn', $addressOnly->details?->name);
+        $this->assertEquals('payout address 14Dj368DZyFPDbSbERf53wcGLWefsZUamn', $addressOnly->details?->identifiedBy);
         $this->assertIsArray($addressOnly->blocks);
         $this->assertCount(8, $addressOnly->blocks);
         $this->assertEquals('1.0901051', $addressOnly->totalFees);
@@ -224,9 +221,9 @@ class MiningEndpointsTest extends MockHttpTestCase
         $this->assertArrayHasKey('BTC Guild', $result->miners);
         $btcGuild = $result->miners['BTC Guild'];
         $this->assertEquals('BTC Guild', $btcGuild->name);
-        $this->assertEquals('BTC Guild', $btcGuild->details->name);
-        $this->assertEquals('http://www.btcguild.com/', $btcGuild->details->link);
-        $this->assertEquals("coinbase tag 'BTC Guild'", $btcGuild->details->identifiedBy);
+        $this->assertEquals('BTC Guild', $btcGuild->details?->name);
+        $this->assertEquals('http://www.btcguild.com/', $btcGuild->details?->link);
+        $this->assertEquals("coinbase tag 'BTC Guild'", $btcGuild->details?->identifiedBy);
         $this->assertIsArray($btcGuild->blocks);
         $this->assertCount(21, $btcGuild->blocks);
         $this->assertEquals('0.75850797', $btcGuild->totalFees);

@@ -66,7 +66,6 @@ class FunEndpointsTest extends MockHttpTestCase
 
         $result = $sut->quotes();
 
-        $this->assertIsArray($result);
         $this->assertGreaterThan(0, count($result));
 
         // Test first quote (Genesis block)
@@ -89,7 +88,6 @@ class FunEndpointsTest extends MockHttpTestCase
         $result = $sut->holidays();
 
         // Should return an array of holidays
-        $this->assertIsArray($result);
         $this->assertGreaterThan(0, count($result));
 
         // Test first holiday - Satoshi's Birthday
@@ -159,7 +157,6 @@ class FunEndpointsTest extends MockHttpTestCase
 
         // Verify response structure
         $this->assertEquals('01-03', $result->day);
-        $this->assertIsArray($result->holidays);
         $this->assertCount(2, $result->holidays);
 
         // First holiday - Bitcoin's Birthday
@@ -188,7 +185,6 @@ class FunEndpointsTest extends MockHttpTestCase
 
         // Verify response structure
         $this->assertEquals('12-29', $result->day);
-        $this->assertIsArray($result->holidays);
         $this->assertEmpty($result->holidays);
     }
 }

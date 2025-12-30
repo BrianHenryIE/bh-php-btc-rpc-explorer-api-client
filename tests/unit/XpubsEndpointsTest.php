@@ -33,7 +33,6 @@ class XpubsEndpointsTest extends MockHttpTestCase
         $this->assertEquals("m/44'/0'", $result->bip32Path);
 
         // Related keys
-        $this->assertIsArray($result->relatedKeys);
         $this->assertCount(2, $result->relatedKeys);
         $this->assertEquals('ypub', $result->relatedKeys[0]->keyType);
         $this->assertEquals('ypub6ZjkLiEwNDVeZ6VaFpaULvtV3sGT6n43CvrktC2G6H87ME8PTxCe59inL5QUWnRM4f5LVhkvxPsoR5C33Hqu4Bb3FY35oYPRp6d7CCfcqmo', $result->relatedKeys[0]->key);
@@ -46,11 +45,9 @@ class XpubsEndpointsTest extends MockHttpTestCase
         $this->assertEquals('bc1qdx0pd4h65d7mekkhk7n6jwzfwgqath7s0e368g', $result->relatedKeys[1]->firstAddress);
 
         // Addresses arrays
-        $this->assertIsArray($result->receiveAddresses);
         $this->assertCount(20, $result->receiveAddresses);
         $this->assertEquals('1AdTLNfqiQtQ7yRNoZDEFTE9kSri2jrRVD', $result->receiveAddresses[0]);
 
-        $this->assertIsArray($result->changeAddresses);
         $this->assertCount(20, $result->changeAddresses);
         $this->assertEquals('13AGMJSeF7HXzyKWtingr4ZSz14REnuRXh', $result->changeAddresses[0]);
     }

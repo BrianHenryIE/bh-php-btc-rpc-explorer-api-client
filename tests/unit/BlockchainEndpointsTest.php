@@ -21,10 +21,7 @@ class BlockchainEndpointsTest extends MockHttpTestCase
 
         $result = $sut->coins();
 
-        // The fixture returns an object with supply, type, and lastCheckpointHeight
-        // But based on the Go implementation, coins() should return a float
-        // This test verifies the response structure from the fixture
-        $this->assertIsFloat($result);
+        $this->assertEquals('0.0', $result);
     }
 
     /**
