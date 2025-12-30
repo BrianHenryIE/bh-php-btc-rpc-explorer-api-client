@@ -2,7 +2,10 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use JsonMapper\Middleware\Attributes\MapFrom;
+use RuntimeException;
 
 /**
  * Coinbase Transaction - the first transaction in a block that creates new bitcoin.
@@ -55,5 +58,39 @@ readonly class CoinbaseTx
         #[MapFrom('blocktime')]
         public int $blockTime,
     ) {
+    }
+
+    /**
+     * Parse the Unix time to DateTimeInterface.
+     *
+     * Converts the transaction timestamp to a DateTimeImmutable object for easier date manipulation.
+     *
+     * @return DateTimeInterface The transaction time as a DateTimeImmutable object.
+     * @throws RuntimeException If the timestamp cannot be parsed.
+     */
+    public function getTime(): DateTimeInterface
+    {
+        $result = DateTimeImmutable::createFromFormat('U', (string) $this->time);
+        if ($result === false) {
+            throw new RuntimeException('Failed to parse transaction time');
+        }
+        return $result;
+    }
+
+    /**
+     * Parse the Unix blockTime to DateTimeInterface.
+     *
+     * Converts the block timestamp to a DateTimeImmutable object for easier date manipulation.
+     *
+     * @return DateTimeInterface The block time as a DateTimeImmutable object.
+     * @throws RuntimeException If the timestamp cannot be parsed.
+     */
+    public function getBlockTime(): DateTimeInterface
+    {
+        $result = DateTimeImmutable::createFromFormat('U', (string) $this->blockTime);
+        if ($result === false) {
+            throw new RuntimeException('Failed to parse block time to DateTime: `' . $this->blockTime . '`.');
+        }
+        return $result;
     }
 }

@@ -2,7 +2,9 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use DateTimeInterface;
 use JsonMapper\Middleware\Attributes\MapFrom;
+use RuntimeException;
 
 /**
  * UTXO Set - statistics about all unspent transaction outputs.
@@ -43,5 +45,22 @@ readonly class UTXOSet
         public bool $usingCoinStatsIndex,
         public int $lastUpdated,
     ) {
+    }
+
+    /**
+     * Parse the Unix lastUpdated timestamp to DateTimeInterface.
+     *
+     * Converts the last updated timestamp to a DateTimeImmutable object for easier date manipulation.
+     *
+     * @return DateTimeInterface The last updated time as a DateTimeImmutable object.
+     * @throws RuntimeException If the timestamp cannot be parsed.
+     */
+    public function getLastUpdated(): DateTimeInterface
+    {
+        $result = \DateTimeImmutable::createFromFormat('U', (string) $this->lastUpdated);
+        if ($result === false) {
+            throw new RuntimeException('Failed to parse last updated timestamp');
+        }
+        return $result;
     }
 }

@@ -2,7 +2,10 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use JsonMapper\Middleware\Attributes\MapFrom;
+use RuntimeException;
 
 /**
  * Block Details - comprehensive information about a Bitcoin block.
@@ -71,5 +74,39 @@ readonly class BlockDetails
         public ?string $miner,
         public ?string $subsidy,
     ) {
+    }
+
+    /**
+     * Parse the Unix time to DateTimeInterface.
+     *
+     * Converts the Unix timestamp to a DateTimeImmutable object for easier date manipulation.
+     *
+     * @return DateTimeInterface The block time as a DateTimeImmutable object.
+     * @throws RuntimeException If the timestamp cannot be parsed.
+     */
+    public function getTime(): DateTimeInterface
+    {
+        $result = DateTimeImmutable::createFromFormat('U', (string) $this->time);
+        if ($result === false) {
+            throw new RuntimeException('Failed to parse block time');
+        }
+        return $result;
+    }
+
+    /**
+     * Parse the Unix medianTime to DateTimeInterface.
+     *
+     * Converts the median time past (median of previous 11 blocks) to a DateTimeImmutable object.
+     *
+     * @return DateTimeInterface The median time as a DateTimeImmutable object.
+     * @throws RuntimeException If the timestamp cannot be parsed.
+     */
+    public function getMedianTime(): DateTimeInterface
+    {
+        $result = DateTimeImmutable::createFromFormat('U', (string) $this->medianTime);
+        if ($result === false) {
+            throw new RuntimeException('Failed to parse median time');
+        }
+        return $result;
     }
 }

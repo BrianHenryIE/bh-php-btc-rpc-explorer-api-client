@@ -22,7 +22,7 @@ composer require brianhenryie/bh-php-btc-rpc-explorer-api-client
 * Generate Contract tests
 * ~~Document abbreviations and jargon~~
 * test failures/exceptions
-* Add convenience `DateTimeInterface` functions for all unix time stamps
+* ~~Add convenience `DateTimeInterface` functions for all unix time stamps~~
 * Add a Docker Compose file for minimal server
 * Need an GitHub Action to keep comments in BtcRpcExplorerApi updated with the traits it uses
 * ~~Use brick/math for decimals, figure out when `PHP_INT_MAX` might be exceeded.~~
