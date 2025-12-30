@@ -45,6 +45,7 @@ abstract class AbstractApi
      * @return T|array<T>|string|int|float|array
      *
      * @throws ClientExceptionInterface PSR HTTP client exception.
+     * @throws BtcRpcExplorerException
      * @throws JsonMapperBuilderException
      */
     protected function callApi(string $endpoint, string $type)
@@ -92,7 +93,7 @@ abstract class AbstractApi
             && $decoded['success'] === false
             && isset($decoded['error'])
         ) {
-            throw new BtcRpcExplorerException($decoded['error']);
+            throw new BtcRpcExplorerException($responseBody, is_string($decoded['error']) ? $decoded['error'] : '');
         }
 
         $factoryRegistry = new FactoryRegistry();
