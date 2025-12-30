@@ -99,33 +99,34 @@ class BlocksEndpointsTest extends MockHttpTestCase
         $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->tx[0]);
 
         // Coinbase transaction
-        $this->assertTrue($result->coinbaseTx?->inActiveChain);
-        $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->coinbaseTx?->txId);
-        $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->coinbaseTx?->hash);
-        $this->assertEquals(1, $result->coinbaseTx?->version);
-        $this->assertEquals(134, $result->coinbaseTx?->size);
-        $this->assertEquals(134, $result->coinbaseTx?->vSize);
-        $this->assertEquals(536, $result->coinbaseTx?->weight);
-        $this->assertEquals(0, $result->coinbaseTx?->lockTime);
+        $this->assertNotNull($result->coinbaseTx);
+        $this->assertTrue($result->coinbaseTx->inActiveChain);
+        $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->coinbaseTx->txId);
+        $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->coinbaseTx->hash);
+        $this->assertEquals(1, $result->coinbaseTx->version);
+        $this->assertEquals(134, $result->coinbaseTx->size);
+        $this->assertEquals(134, $result->coinbaseTx->vSize);
+        $this->assertEquals(536, $result->coinbaseTx->weight);
+        $this->assertEquals(0, $result->coinbaseTx->lockTime);
 
         // Coinbase vin
-        $this->assertCount(1, $result->coinbaseTx?->vIn);
-        $this->assertEquals('04b3936a1a017c', $result->coinbaseTx?->vIn[0]->coinbase);
-        $this->assertEquals(4294967295, $result->coinbaseTx?->vIn[0]->sequence);
+        $this->assertCount(1, $result->coinbaseTx->vIn);
+        $this->assertEquals('04b3936a1a017c', $result->coinbaseTx->vIn[0]->coinbase);
+        $this->assertEquals(4294967295, $result->coinbaseTx->vIn[0]->sequence);
 
         // Coinbase vout
-        $this->assertCount(1, $result->coinbaseTx?->vOut);
-        $this->assertEquals(50.05, $result->coinbaseTx?->vOut[0]->value);
-        $this->assertEquals(0, $result->coinbaseTx?->vOut[0]->n);
-        $this->assertEquals('04563053b8900762f3d3e8725012d617d177e3c4af3275c3265a1908b434e0df91ec75603d0d8955ef040e5f68d5c36989efe21a59f4ef94a5cc95c99794a84492 OP_CHECKSIG', $result->coinbaseTx?->vOut[0]->scriptPubKey->asm);
-        $this->assertEquals('4104563053b8900762f3d3e8725012d617d177e3c4af3275c3265a1908b434e0df91ec75603d0d8955ef040e5f68d5c36989efe21a59f4ef94a5cc95c99794a84492ac', $result->coinbaseTx?->vOut[0]->scriptPubKey->hex);
-        $this->assertEquals('pubkey', $result->coinbaseTx?->vOut[0]->scriptPubKey->type);
+        $this->assertCount(1, $result->coinbaseTx->vOut);
+        $this->assertEquals(50.05, $result->coinbaseTx->vOut[0]->value);
+        $this->assertEquals(0, $result->coinbaseTx->vOut[0]->n);
+        $this->assertEquals('04563053b8900762f3d3e8725012d617d177e3c4af3275c3265a1908b434e0df91ec75603d0d8955ef040e5f68d5c36989efe21a59f4ef94a5cc95c99794a84492 OP_CHECKSIG', $result->coinbaseTx->vOut[0]->scriptPubKey->asm);
+        $this->assertEquals('4104563053b8900762f3d3e8725012d617d177e3c4af3275c3265a1908b434e0df91ec75603d0d8955ef040e5f68d5c36989efe21a59f4ef94a5cc95c99794a84492ac', $result->coinbaseTx->vOut[0]->scriptPubKey->hex);
+        $this->assertEquals('pubkey', $result->coinbaseTx->vOut[0]->scriptPubKey->type);
 
-        $this->assertEquals('01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0704b3936a1a017cffffffff01403d522a01000000434104563053b8900762f3d3e8725012d617d177e3c4af3275c3265a1908b434e0df91ec75603d0d8955ef040e5f68d5c36989efe21a59f4ef94a5cc95c99794a84492ac00000000', $result->coinbaseTx?->hex);
-        $this->assertEquals('0000000000002917ed80650c6174aac8dfc46f5fe36480aaef682ff6cd83c3ca', $result->coinbaseTx?->blockHash);
-        $this->assertEquals(61147, $result->coinbaseTx?->confirmations);
-        $this->assertEquals(1305200806, $result->coinbaseTx?->time);
-        $this->assertEquals(1305200806, $result->coinbaseTx?->blockTime);
+        $this->assertEquals('01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0704b3936a1a017cffffffff01403d522a01000000434104563053b8900762f3d3e8725012d617d177e3c4af3275c3265a1908b434e0df91ec75603d0d8955ef040e5f68d5c36989efe21a59f4ef94a5cc95c99794a84492ac00000000', $result->coinbaseTx->hex);
+        $this->assertEquals('0000000000002917ed80650c6174aac8dfc46f5fe36480aaef682ff6cd83c3ca', $result->coinbaseTx->blockHash);
+        $this->assertEquals(61147, $result->coinbaseTx->confirmations);
+        $this->assertEquals(1305200806, $result->coinbaseTx->time);
+        $this->assertEquals(1305200806, $result->coinbaseTx->blockTime);
     }
 
     /**
