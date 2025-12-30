@@ -5,12 +5,27 @@ namespace BrianHenryIE\BtcRpcExplorer\Model;
 use JsonMapper\Middleware\Attributes\MapFrom;
 
 /**
- * Response model for UTXO set endpoint.
+ * UTXO Set - statistics about all unspent transaction outputs.
+ *
+ * The UTXO (Unspent Transaction Output) set represents all spendable bitcoin in the network.
+ * Each UTXO is a previous transaction output that hasn't been spent yet.
  *
  * @see \BrianHenryIE\BtcRpcExplorer\BtcRpcExplorerAPI::utxoSet()
  */
 readonly class UTXOSet
 {
+    /**
+     * @param int $height Block height - the blockchain height at which this UTXO set snapshot was taken.
+     * @param string $bestBlock Best block hash - hash of the most recent block included in this snapshot.
+     * @param int $txOuts UTXO count - total number of unspent transaction outputs in the set.
+     * @param int $bogosize Estimated size - approximate serialized size of the UTXO set in bytes (for estimation only).
+     * @param string $hashSerialized3 Serialized hash - hash of the serialized UTXO set (version 3), used to verify consistency.
+     * @param string $totalAmount Total supply - sum of all unspent bitcoin in the UTXO set (in BTC).
+     * @param int $transactions Transaction count - number of transactions that have at least one unspent output.
+     * @param int $diskSize Disk size - actual size on disk of the UTXO set database in bytes.
+     * @param bool $usingCoinStatsIndex Using coinstats index - whether Bitcoin Core's coinstats index is being used for faster UTXO queries.
+     * @param int $lastUpdated Last updated - Unix timestamp when this UTXO set snapshot was last updated.
+     */
     public function __construct(
         public int $height,
         #[MapFrom('bestblock')]

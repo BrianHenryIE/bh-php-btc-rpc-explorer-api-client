@@ -19,11 +19,18 @@ use BrianHenryIE\BtcRpcExplorer\Model\ReceiveOrChange;
 trait XpubsEndpoints
 {
     /**
-     * Get details for an extended public key with pagination.
+     * Get details for an extended public key (xpub/ypub/zpub).
      *
-     * @param string $pubkey Extended public key
-     * @param int $limit Number of results
-     * @param int $offset Offset for pagination
+     * Extended public keys (defined in BIP32) allow deriving multiple Bitcoin addresses from a single key.
+     * This is useful for wallets that generate new addresses for each transaction while using one backup.
+     * - xpub: Legacy addresses (P2PKH, start with '1')
+     * - ypub: SegWit-wrapped addresses (P2SH-P2WPKH, start with '3')
+     * - zpub: Native SegWit addresses (Bech32, start with 'bc1')
+     *
+     * @param string $pubkey Extended public key - an xpub, ypub, or zpub string
+     * @param int $limit Number of addresses to return (0 = all)
+     * @param int $offset Skip this many addresses for pagination
+     * @return ExtendedPublicKeyDetails Details including key type, derived addresses, and related keys in other formats
      */
     public function extendedPublicKeyDetails(string $pubkey, int $limit = 0, int $offset = 0): ExtendedPublicKeyDetails
     {
@@ -36,14 +43,17 @@ trait XpubsEndpoints
     }
 
     /**
-     * Returns a list of addresses derived from the given [xyz]pub.
+     * Get addresses derived from an extended public key.
      *
-     * @param string $pubkey
-     * @param ReceiveOrChange $receiveOrChange
-     * @param int $limit
-     * @param int $offset
+     * Extended public keys can derive two chains of addresses:
+     * - Receive addresses (m/0): Used for receiving payments from others
+     * - Change addresses (m/1): Used for receiving change from your own transactions
      *
-     * @return string[]
+     * @param string $pubkey Extended public key (xpub/ypub/zpub)
+     * @param ReceiveOrChange $receiveOrChange Which address chain to retrieve (RECEIVE or CHANGE)
+     * @param int $limit Number of addresses to return (0 = all)
+     * @param int $offset Skip this many addresses for pagination
+     * @return string[] Array of Bitcoin addresses derived from the extended public key
      */
     public function extendedPublicKeyAddresses(
         string $pubkey,
@@ -60,9 +70,15 @@ trait XpubsEndpoints
     }
 
     /**
-     * Returns a list of transaction IDs associated with the given [xyz]pub.
+     * Get transaction IDs associated with an extended public key.
      *
-     * @param string $pubkey
+     * Returns all transactions involving addresses derived from this extended public key.
+     * Uses the gap limit to determine how many unused addresses to scan.
+     *
+     * @param string $pubkey Extended public key (xpub/ypub/zpub)
+     * @param int $gapLimit How many consecutive unused addresses to scan before stopping (default: 20, per BIP44)
+     * @param int $addressLimit Maximum number of addresses to scan (0 = unlimited)
+     * @return ExtendedPublicKeyTransactions Transaction IDs and count for this extended public key
      */
     public function extendedPublicKeyTransactions(
         string $pubkey,

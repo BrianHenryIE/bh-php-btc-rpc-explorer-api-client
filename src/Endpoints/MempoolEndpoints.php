@@ -18,7 +18,12 @@ use BrianHenryIE\BtcRpcExplorer\Model\MempoolSummary;
 trait MempoolEndpoints
 {
     /**
-     * Get the number of transactions in the mempool.
+     * Get the number of unconfirmed transactions in the mempool.
+     *
+     * The mempool (memory pool) holds transactions that have been broadcast to the network
+     * but not yet included in a block. This returns how many transactions are waiting.
+     *
+     * @return int Number of transactions currently in the mempool waiting for confirmation
      */
     public function mempoolCount(): int
     {
@@ -27,7 +32,13 @@ trait MempoolEndpoints
     }
 
     /**
-     * Get the summary of Bitcoin Core's mempool / full output from 'getmempoolinfo'.
+     * Get detailed statistics about the mempool.
+     *
+     * Returns comprehensive information about unconfirmed transactions including size limits,
+     * fee rates, and memory usage. The mempool acts as a waiting room for transactions
+     * before miners include them in blocks.
+     *
+     * @return MempoolSummary Detailed mempool statistics including transaction count, memory usage, fee rates, and configuration
      */
     public function mempoolSummary(): MempoolSummary
     {
@@ -36,7 +47,13 @@ trait MempoolEndpoints
     }
 
     /**
-     * Get recommended fees for various confirmation times.
+     * Get recommended transaction fee rates for different confirmation times.
+     *
+     * Returns suggested fee rates (in satoshis per virtual byte) for transactions you want
+     * confirmed within specific timeframes. Higher fees encourage miners to prioritize your
+     * transaction. Fees are based on current network conditions and mempool congestion.
+     *
+     * @return Fees Recommended fee rates in sats/vB for next block (~10 min), 30 min, 1 hour, and 1 day confirmations
      */
     public function mempoolFees(): Fees
     {

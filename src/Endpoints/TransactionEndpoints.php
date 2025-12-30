@@ -15,9 +15,14 @@ use BrianHenryIE\BtcRpcExplorer\Model\TXSummary;
 trait TransactionEndpoints
 {
     /**
-     * Get transaction summary by transaction ID.
+     * Get transaction details by transaction ID.
      *
-     * @param string $txid Transaction ID
+     * Retrieves complete information about a Bitcoin transaction including inputs (coins being spent),
+     * outputs (coins being sent), fees, and confirmation status. Each transaction has a unique txid
+     * (transaction ID) that serves as its permanent identifier.
+     *
+     * @param string $txid Transaction ID (txid) - unique 64-character hexadecimal identifier for the transaction
+     * @return TXSummary Complete transaction details including inputs, outputs, fees, block information, and confirmations
      */
     public function tx(string $txid): TXSummary
     {
