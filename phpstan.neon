@@ -1,5 +1,5 @@
 parameters:
-    level: 8
+    level: max
     paths:
         - src
         - tests
@@ -7,3 +7,6 @@ parameters:
         - tests/_reports
     treatPhpDocTypesAsCertain: false
     ignoreErrors:
+        - # Allow skipping tests to not fail PHPStan.
+          identifier: deadCode.unreachable
+          path: tests

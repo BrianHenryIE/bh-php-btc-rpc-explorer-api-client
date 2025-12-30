@@ -53,6 +53,7 @@ trait XpubsEndpoints
      * @param ReceiveOrChange $receiveOrChange Which address chain to retrieve (RECEIVE or CHANGE)
      * @param int $limit Number of addresses to return (0 = all)
      * @param int $offset Skip this many addresses for pagination
+     *
      * @return string[] Array of Bitcoin addresses derived from the extended public key
      */
     public function extendedPublicKeyAddresses(
@@ -65,7 +66,8 @@ trait XpubsEndpoints
         if ($offset !== 0 || $limit !== 0) {
             $options = "&limit={$limit}&offset={$offset}";
         }
-        /** @var array<mixed> */
+
+        /** @var array<string> */
         return $this->callApi("/xyzpub/addresses/{$pubkey}{$options}", 'array');
     }
 

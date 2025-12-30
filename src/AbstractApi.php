@@ -75,7 +75,12 @@ abstract class AbstractApi
     {
         $request = $this->requestFactory->createRequest(
             'GET',
-            "{$this->explorerUrl}" . self::API_ROOT . "{$endpoint}"
+            sprintf(
+                '%s/%s/%s',
+                trim($this->explorerUrl, '/'),
+                trim(self::API_ROOT, '/'),
+                trim($endpoint, '/')
+            )
         );
 
         $response = $this->client->sendRequest($request);

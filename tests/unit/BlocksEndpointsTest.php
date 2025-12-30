@@ -59,7 +59,6 @@ class BlocksEndpointsTest extends MockHttpTestCase
         $this->assertEquals('000000000000000000cbeff0b533f8e1189cf09dfbebf57a8ebe349362811b80', $result->previousBlockHash);
 
         // Transactions array
-        $this->assertIsArray($result->tx);
         $this->assertEmpty($result->tx);
     }
 
@@ -94,7 +93,6 @@ class BlocksEndpointsTest extends MockHttpTestCase
         $this->assertEquals(16716, $result->weight);
 
         // Transactions array
-        $this->assertIsArray($result->tx);
         $this->assertCount(13, $result->tx);
         $this->assertEquals('5b75086dafeede555fc8f9a810d8b10df57c46f9f176ccc3dd8d2fa20edd685b', $result->tx[0]);
 

@@ -55,6 +55,9 @@ class ContractTestCase extends \PHPUnit\Framework\TestCase
 
     protected static function getApi(): BtcRpcExplorerApi
     {
+        /** @var string $server */
+        $server = $_ENV[ 'SERVER' ];
+
         $httpFactory = new HttpFactory();
         $client         = new Client();
 
@@ -62,7 +65,7 @@ class ContractTestCase extends \PHPUnit\Framework\TestCase
             requestFactory: $httpFactory,
             streamFactory: $httpFactory,
             client: $client,
-            explorerUrl: $_ENV[ 'SERVER' ],
+            explorerUrl: $server,
         );
     }
 }

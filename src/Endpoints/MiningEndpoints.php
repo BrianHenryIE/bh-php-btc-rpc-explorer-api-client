@@ -55,7 +55,7 @@ trait MiningEndpoints
      */
     public function nextBlockTXIDs(): array
     {
-        /** @var array<mixed> */
+        /** @var array<string> */
         return $this->callApi('/mining/next-block/txids', 'array');
     }
 
