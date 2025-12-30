@@ -2,6 +2,9 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use DateTimeImmutable;
+use DateTimeInterface;
+
 /**
  * Response model for transaction endpoint.
  *
@@ -28,5 +31,12 @@ readonly class TXSummary
         public int $confirmations,
         public int $blocktime,
     ) {
+    }
+
+    /**
+     * Parse the unix `blocktime` to `DateTime`.
+     */
+    public function getBlockTime(): DateTimeInterface {
+        return DateTimeImmutable::createFromFormat('U', $this->blocktime);
     }
 }

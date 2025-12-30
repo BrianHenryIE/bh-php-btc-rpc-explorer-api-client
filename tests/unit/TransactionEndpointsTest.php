@@ -33,6 +33,7 @@ class TransactionEndpointsTest extends MockHttpTestCase
         $this->assertEquals('00000000d1145790a8694403d4063f323d499e655c83426834d4ce2f8dd4a2ee', $result->blockhash);
         $this->assertEquals(184433, $result->confirmations);
         $this->assertEquals(1231731025, $result->blocktime);
+        $this->assertEquals('2009-01-12', $result->getBlockTime()->format('Y-m-d'));
 
         // Test vin array
         $this->assertIsArray($result->vin);
