@@ -30,7 +30,7 @@ trait BlockchainEndpoints
     /**
      * Get the current UTXO set snapshot.
      *
-     * @return UTXOSet
+     * Unspent Transaction Output
      */
     public function utxoSet(): UTXOSet
     {
