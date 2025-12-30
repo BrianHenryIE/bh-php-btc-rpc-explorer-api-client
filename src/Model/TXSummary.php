@@ -36,7 +36,8 @@ readonly class TXSummary
     /**
      * Parse the unix `blocktime` to `DateTime`.
      */
-    public function getBlockTime(): DateTimeInterface {
+    public function getBlockTime(): DateTimeInterface
+    {
         return DateTimeImmutable::createFromFormat('U', $this->blocktime);
     }
 }

@@ -28,8 +28,7 @@ trait AddressesEndpoints
         int $limit = 0,
         int $offset = 0,
         // TODO: sort desc|asc.
-    ): AddressSummary
-    {
+    ): AddressSummary {
         return $this->callApi("/address/{$address}", AddressSummary::class);
     }
 }
