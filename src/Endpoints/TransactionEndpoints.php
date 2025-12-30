@@ -21,6 +21,7 @@ trait TransactionEndpoints
      */
     public function tx(string $txid): TXSummary
     {
+        /** @var TXSummary */
         return $this->callApi("/tx/{$txid}", TXSummary::class);
     }
 }

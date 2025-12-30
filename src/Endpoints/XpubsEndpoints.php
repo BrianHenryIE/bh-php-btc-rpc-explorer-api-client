@@ -31,6 +31,7 @@ trait XpubsEndpoints
         if ($offset !== 0 || $limit !== 0) {
             $options = "?limit={$limit}&offset={$offset}";
         }
+        /** @var ExtendedPublicKeyDetails */
         return $this->callApi("/xyzpub/{$pubkey}{$options}", ExtendedPublicKeyDetails::class);
     }
 
@@ -54,6 +55,7 @@ trait XpubsEndpoints
         if ($offset !== 0 || $limit !== 0) {
             $options = "&limit={$limit}&offset={$offset}";
         }
+        /** @var array<mixed> */
         return $this->callApi("/xyzpub/addresses/{$pubkey}{$options}", 'array');
     }
 
@@ -74,6 +76,7 @@ trait XpubsEndpoints
         if ($addressLimit !== 0) {
             $options = "addressLimit={$addressLimit}&";
         }
+        /** @var ExtendedPublicKeyTransactions */
         return $this->callApi("/xyzpub/txids/{$pubkey}{$options}", ExtendedPublicKeyTransactions::class);
     }
 }

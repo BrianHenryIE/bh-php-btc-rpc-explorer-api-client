@@ -26,6 +26,7 @@ trait MiningEndpoints
      */
     public function hashrate(): MiningHashrate
     {
+        /** @var MiningHashrate */
         return $this->callApi('/mining/hashrate', MiningHashrate::class);
     }
 
@@ -34,8 +35,8 @@ trait MiningEndpoints
      */
     public function difficultyAdjustmentEstimate(): float
     {
-        $response = $this->callApi('/mining/diff-adj-estimate', 'float');
-        return (float) $response;
+        /** @var float */
+        return $this->callApi('/mining/diff-adj-estimate', 'float');
     }
 
     /**
@@ -43,6 +44,7 @@ trait MiningEndpoints
      */
     public function nextBlock(): NextBlockDetails
     {
+        /** @var NextBlockDetails */
         return $this->callApi('/mining/next-block', NextBlockDetails::class);
     }
 
@@ -53,6 +55,7 @@ trait MiningEndpoints
      */
     public function nextBlockTXIDs(): array
     {
+        /** @var array<mixed> */
         return $this->callApi('/mining/next-block/txids', 'array');
     }
 
@@ -63,6 +66,7 @@ trait MiningEndpoints
      */
     public function nextBlockIncludes(string $txid): bool
     {
+        /** @var array<mixed> $response */
         $response = $this->callApi("/mining/next-block/includes/{$txid}", 'array');
         return $response['included'] ?? false;
     }
@@ -74,6 +78,7 @@ trait MiningEndpoints
      */
     public function minerSummary(string $since): MinerSummary
     {
+        /** @var MinerSummary */
         return $this->callApi("/mining/miner-summary?since={$since}", MinerSummary::class);
     }
 }

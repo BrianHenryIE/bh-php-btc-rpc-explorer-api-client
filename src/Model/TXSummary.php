@@ -46,6 +46,10 @@ readonly class TXSummary
      */
     public function getBlockTime(): DateTimeInterface
     {
-        return DateTimeImmutable::createFromFormat('U', (string) $this->blockTime);
+        $result = DateTimeImmutable::createFromFormat('U', (string) $this->blockTime);
+        if ($result === false) {
+            throw new \RuntimeException('Failed to parse block time');
+        }
+        return $result;
     }
 }

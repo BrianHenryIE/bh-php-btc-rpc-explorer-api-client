@@ -28,6 +28,7 @@ trait FunEndpoints
      */
     public function quotes(): array
     {
+        /** @var QuoteDetails[] */
         return $this->callApi('/quotes/all', QuoteDetails::class);
     }
 
@@ -38,6 +39,7 @@ trait FunEndpoints
      */
     public function quote(int $index): QuoteDetails
     {
+        /** @var QuoteDetails */
         return $this->callApi("/quotes/{$index}", QuoteDetails::class);
     }
 
@@ -46,6 +48,7 @@ trait FunEndpoints
      */
     public function randomQuote(): QuoteDetails
     {
+        /** @var QuoteDetails */
         return $this->callApi('/quotes/random', QuoteDetails::class);
     }
 
@@ -53,9 +56,12 @@ trait FunEndpoints
      * Returns the full curated list of Bitcoin Holidays.
      *
      * /api/holidays/all
+     *
+     * @return HolidayDetails[]
      */
     public function holidays(): array
     {
+        /** @var HolidayDetails[] */
         return $this->callApi('/holidays/all', HolidayDetails::class);
     }
 
@@ -68,6 +74,7 @@ trait FunEndpoints
      */
     public function holidaysToday(int $tzOffset = 0): HolidaysDay
     {
+        /** @var HolidaysDay */
         return $this->callApi("/holidays/today?tzOffset={$tzOffset}", HolidaysDay::class);
     }
 
@@ -80,6 +87,7 @@ trait FunEndpoints
     {
 //        TODO: validate input.
 
+        /** @var HolidaysDay */
         return $this->callApi("/holidays/{$day}", HolidaysDay::class);
     }
 }

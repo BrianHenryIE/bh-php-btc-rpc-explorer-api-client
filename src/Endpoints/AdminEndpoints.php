@@ -17,6 +17,7 @@ trait AdminEndpoints
      */
     public function version(): string
     {
+        /** @var string */
         return $this->callApi('/version', 'string');
     }
 }

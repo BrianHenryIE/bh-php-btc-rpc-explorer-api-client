@@ -40,12 +40,15 @@ abstract class AbstractApi
      * Call arbitrary API endpoints and return `json_decode()`d `array`.
      *
      * Ideally, we would have every endpoint documented and typed, but this is to allow for others.
+     *
+     * @return array<mixed>
      */
     public function call(string $endpoint): array
     {
         /**
          * TODO: strip `$this->explorerUrl`, `self::API_ROOT` from `^\$endpoint`
          */
+        /** @var array<mixed> */
         return $this->callApi($endpoint, 'array');
     }
 
@@ -54,9 +57,15 @@ abstract class AbstractApi
      *
      * @template T of object
      * @param string $endpoint The REST route, excluding the domain.
-     * @param class-string<T>|string $type The object type to cast/deserialize the response to, or primitive type.
+     * @param class-string<T>|'string'|'int'|'float'|'array' $type The object type to cast/deserialize the response to, or primitive type.
      *
-     * @return T|array<T>|string|int|float|array
+     * @return (
+     *     $type is 'string' ? string :
+     *     ($type is 'int' ? int :
+     *     ($type is 'float' ? float :
+     *     ($type is 'array' ? array<mixed> :
+     *     (T|array<int, T>))))
+     * )
      *
      * @throws ClientExceptionInterface PSR HTTP client exception.
      * @throws BtcRpcExplorerException
@@ -79,18 +88,12 @@ abstract class AbstractApi
 
         // Handle primitive types
         if (in_array($type, ['string', 'int', 'float', 'array'])) {
-            if ($type === 'string') {
-                return trim($responseBody);
-            }
-            if ($type === 'int') {
-                return (int) $responseBody;
-            }
-            if ($type === 'float') {
-                return (float) $responseBody;
-            }
-            if ($type === 'array') {
-                return json_decode($responseBody, true);
-            }
+            return match ($type) {
+                'string' => trim($responseBody),
+                'int' => (int)$responseBody,
+                'float' => (float)$responseBody,
+                default => json_decode($responseBody, true),
+            };
         }
 
         if (! class_exists($type)) {

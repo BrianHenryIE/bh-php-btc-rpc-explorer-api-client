@@ -21,6 +21,7 @@ trait PriceEndpoints
      */
     public function price(): Price
     {
+        /** @var Price */
         return $this->callApi('/price', Price::class);
     }
 
@@ -31,6 +32,7 @@ trait PriceEndpoints
      */
     public function priceIn(string $currency): string
     {
+        /** @var string */
         return $this->callApi("/price/" . strtolower($currency), 'string');
     }
 
@@ -41,8 +43,8 @@ trait PriceEndpoints
      */
     public function marketCapIn(string $currency): float
     {
-        $response = $this->callApi("/price/" . strtolower($currency) . "/marketcap", 'float');
-        return (float) $response;
+        /** @var float */
+        return $this->callApi("/price/" . strtolower($currency) . "/marketcap", 'float');
     }
 
     /**
@@ -52,7 +54,7 @@ trait PriceEndpoints
      */
     public function priceInSats(string $currency): int
     {
-        $response = $this->callApi("/price/" . strtolower($currency) . "/sats", 'int');
-        return (int) $response;
+        /** @var int */
+        return $this->callApi("/price/" . strtolower($currency) . "/sats", 'int');
     }
 }

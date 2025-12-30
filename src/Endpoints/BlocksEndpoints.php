@@ -26,6 +26,7 @@ trait BlocksEndpoints
      */
     public function blockWithHash(string $hash): BlockDetails
     {
+        /** @var BlockDetails */
         return $this->callApi("/block/{$hash}", BlockDetails::class);
     }
 
@@ -36,6 +37,7 @@ trait BlocksEndpoints
      */
     public function blockWithHeight(int $height): BlockDetails
     {
+        /** @var BlockDetails */
         return $this->callApi("/block/{$height}", BlockDetails::class);
     }
 
@@ -46,6 +48,7 @@ trait BlocksEndpoints
      */
     public function blockHeaderWithHash(string $hash): BlockDetails
     {
+        /** @var BlockDetails */
         return $this->callApi("/block/header/{$hash}", BlockDetails::class);
     }
 
@@ -56,6 +59,7 @@ trait BlocksEndpoints
      */
     public function blockHeaderWithHeight(int $height): BlockDetails
     {
+        /** @var BlockDetails */
         return $this->callApi("/block/header/{$height}", BlockDetails::class);
     }
 
@@ -64,6 +68,7 @@ trait BlocksEndpoints
      */
     public function tip(): Tip
     {
+        /** @var Tip */
         return $this->callApi('/blocks/tip', Tip::class);
     }
 
@@ -72,8 +77,8 @@ trait BlocksEndpoints
      */
     public function tipHeight(): int
     {
-        $response = $this->callApi('/blocks/tip/height', 'int');
-        return (int) $response;
+        /** @var int */
+        return $this->callApi('/blocks/tip/height', 'int');
     }
 
     /**
@@ -81,6 +86,7 @@ trait BlocksEndpoints
      */
     public function tipHash(): string
     {
+        /** @var string */
         return $this->callApi('/blocks/tip/hash', 'string');
     }
 }

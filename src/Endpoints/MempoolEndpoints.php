@@ -22,8 +22,8 @@ trait MempoolEndpoints
      */
     public function mempoolCount(): int
     {
-        $response = $this->callApi('/mempool/count', 'int');
-        return (int) $response;
+        /** @var int */
+        return $this->callApi('/mempool/count', 'int');
     }
 
     /**
@@ -31,6 +31,7 @@ trait MempoolEndpoints
      */
     public function mempoolSummary(): MempoolSummary
     {
+        /** @var MempoolSummary */
         return $this->callApi('/mempool/summary', MempoolSummary::class);
     }
 
@@ -39,6 +40,7 @@ trait MempoolEndpoints
      */
     public function mempoolFees(): Fees
     {
+        /** @var Fees */
         return $this->callApi('/mempool/fees', Fees::class);
     }
 }

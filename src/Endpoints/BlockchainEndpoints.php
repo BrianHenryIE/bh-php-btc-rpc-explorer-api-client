@@ -23,8 +23,8 @@ trait BlockchainEndpoints
      */
     public function coins(): float
     {
-        $response = $this->callApi('/blockchain/coins', 'float');
-        return (float) $response;
+        /** @var float */
+        return $this->callApi('/blockchain/coins', 'float');
     }
 
     /**
@@ -34,6 +34,7 @@ trait BlockchainEndpoints
      */
     public function utxoSet(): UTXOSet
     {
+        /** @var UTXOSet */
         return $this->callApi('/blockchain/utxo-set', UTXOSet::class);
     }
 }

@@ -29,6 +29,7 @@ trait AddressesEndpoints
         int $offset = 0,
         // TODO: sort desc|asc.
     ): AddressSummary {
+        /** @var AddressSummary */
         return $this->callApi("/address/{$address}", AddressSummary::class);
     }
 }
