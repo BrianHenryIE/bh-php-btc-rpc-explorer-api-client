@@ -36,6 +36,19 @@ abstract class AbstractApi
     }
 
     /**
+     * Call arbitrary API endpoints and return `json_decode()`d `array`.
+     *
+     * Ideally, we would have every endpoint documented and typed, but this is to allow for others.
+     */
+    public function call(string $endpoint): array
+    {
+        /**
+         * TODO: strip `$this->explorerUrl`, `self::API_ROOT` from `^\$endpoint`
+         */
+        return $this->callApi($endpoint, 'array');
+    }
+
+    /**
      * Queries the API via PSR client and casts the value to an object.
      *
      * @template T of object
