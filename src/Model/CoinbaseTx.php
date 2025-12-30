@@ -12,8 +12,8 @@ use JsonMapper\Middleware\Attributes\MapFrom;
 readonly class CoinbaseTx
 {
     /**
-     * @param VIn[] $vin
-     * @param VOut[] $vout
+     * @param VIn[] $vIn
+     * @param VOut[] $vOut
      */
     public function __construct(
         public bool $inActiveChain,
@@ -22,16 +22,22 @@ readonly class CoinbaseTx
         public string $hash,
         public int $version,
         public int $size,
-        public int $vsize,
+        #[MapFrom('vsize')]
+        public int $vSize,
         public int $weight,
-        public int $locktime,
-        public array $vin,
-        public array $vout,
+        #[MapFrom('locktime')]
+        public int $lockTime,
+        #[MapFrom('vin')]
+        public array $vIn,
+        #[MapFrom('vout')]
+        public array $vOut,
         public string $hex,
-        public string $blockhash,
+        #[MapFrom('blockhash')]
+        public string $blockHash,
         public int $confirmations,
         public int $time,
-        public int $blocktime,
+        #[MapFrom('blocktime')]
+        public int $blockTime,
     ) {
     }
 }

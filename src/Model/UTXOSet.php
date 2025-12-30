@@ -2,6 +2,8 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use JsonMapper\Middleware\Attributes\MapFrom;
+
 /**
  * Response model for UTXO set endpoint.
  *
@@ -11,13 +13,18 @@ readonly class UTXOSet
 {
     public function __construct(
         public int $height,
-        public string $bestblock,
-        public int $txouts,
+        #[MapFrom('bestblock')]
+        public string $bestBlock,
+        #[MapFrom('txouts')]
+        public int $txOuts,
         public int $bogosize,
-        public string $hash_serialized_2,
-        public string $total_amount,
+        #[MapFrom('hash_serialized_3')]
+        public string $hashSerialized3,
+        #[MapFrom('total_amount')]
+        public string $totalAmount,
         public int $transactions,
-        public int $disk_size,
+        #[MapFrom('disk_size')]
+        public int $diskSize,
         public bool $usingCoinStatsIndex,
         public int $lastUpdated,
     ) {

@@ -14,8 +14,8 @@ use JsonMapper\Middleware\Attributes\MapFrom;
 readonly class TXSummary
 {
     /**
-     * @param VIn[] $vin
-     * @param VOut[] $vout
+     * @param VIn[] $vIn
+     * @param VOut[] $vOut
      */
     public function __construct(
         #[MapFrom('txid')]
@@ -23,23 +23,29 @@ readonly class TXSummary
         public string $hash,
         public int $version,
         public int $size,
-        public int $vsize,
+        #[MapFrom('vsize')]
+        public int $vSize,
         public int $weight,
-        public int $locktime,
-        public array $vin,
-        public array $vout,
+        #[MapFrom('locktime')]
+        public int $lockTime,
+        #[MapFrom('vin')]
+        public array $vIn,
+        #[MapFrom('vout')]
+        public array $vOut,
         public string $hex,
-        public string $blockhash,
+        #[MapFrom('blockhash')]
+        public string $blockHash,
         public int $confirmations,
-        public int $blocktime,
+        #[MapFrom('blocktime')]
+        public int $blockTime,
     ) {
     }
 
     /**
-     * Parse the unix `blocktime` to `DateTime`.
+     * Parse the unix `blockTime` to `DateTime`.
      */
     public function getBlockTime(): DateTimeInterface
     {
-        return DateTimeImmutable::createFromFormat('U', $this->blocktime);
+        return DateTimeImmutable::createFromFormat('U', (string) $this->blockTime);
     }
 }

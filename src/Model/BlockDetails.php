@@ -2,6 +2,8 @@
 
 namespace BrianHenryIE\BtcRpcExplorer\Model;
 
+use JsonMapper\Middleware\Attributes\MapFrom;
+
 /**
  * Response model for block endpoints.
  *
@@ -19,17 +21,23 @@ readonly class BlockDetails
         public int $height,
         public int $version,
         public string $versionHex,
-        public string $merkleroot,
+        #[MapFrom('merkleroot')]
+        public string $merkleRoot,
         public int $time,
-        public int $mediantime,
+        #[MapFrom('mediantime')]
+        public int $medianTime,
         public int $nonce,
         public string $bits,
         public string $difficulty,
-        public string $chainwork,
+        #[MapFrom('chainwork')]
+        public string $chainWork,
         public int $nTx,
-        public string $previousblockhash,
-        public string $nextblockhash,
-        public int $strippedsize,
+        #[MapFrom('previousblockhash')]
+        public string $previousBlockHash,
+        #[MapFrom('nextblockhash')]
+        public string $nextBlockHash,
+        #[MapFrom('strippedsize')]
+        public int $strippedSize,
         public int $size,
         public int $weight,
         public array $tx,

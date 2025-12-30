@@ -21,7 +21,8 @@ readonly class VIn
         public int $sequence = 0,
         #[MapFrom('txid')]
         public ?string $txId = null,
-        public ?int $vout = null,
+        #[MapFrom('vout')]
+        public ?int $vOut = null,
         public ?ScriptSig $scriptSig = null,
     ) {
     }
